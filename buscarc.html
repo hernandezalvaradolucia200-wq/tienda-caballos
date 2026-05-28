@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title> caballos</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background-image:url('fondo3.jpg');
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+
+/* PRODUCTOS */
+
+.contenedor{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.producto{
+    width:220px;
+    text-align:center;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+
+
+/* CARRITO */
+
+#icono-carrito{
+    position:fixed;
+    top:20px;
+    right:20px;
+    font-size:35px;
+    cursor:pointer;
+}
+
+#carrito{
+    position:fixed;
+    top:70px;
+    right:20px;
+    width:300px;
+    background:white;
+    border:2px solid black;
+    padding:20px;
+    display:none;
+    border-radius:15px;
+}
+
+
+
+/* BOTONES */
+
+button{
+    background:navy;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+    border-radius:10px;
+}
+
+button:hover{
+    background:purple;
+}
+
+
+
+/* INPUTS */
+
+input{
+    padding:10px;
+    border-radius:10px;
+    border:1px solid gray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<!-- TITULO -->
+
+<div style="width:100%; height:120px; background:pink;
+display:flex; align-items:center; justify-content:center;">
+
+<h1 style="margin:0; color:black; font-size:50px;
+letter-spacing:8px;">
+
+ ✨ EL CORCEL ✨
+
+</h1>
+
+</div>
+
+
+
+<!-- BUSCADOR -->
+
+<div style="text-align:center; margin-top:20px;">
+
+<input type="text"
+id="buscador"
+placeholder="Buscar producto..."
+onkeyup="filtrar()"
+style="width:300px;">
+
+</div>
+
+
+
+<!-- ICONO CARRITO -->
+
+<div id="icono-carrito" onclick="mostrarCarrito()">
+
+🛒
+
+</div>
+
+
+<!-- CARRITO -->
+
+<div id="carrito">
+
+<h2>🛒 CARRITO</h2>
+
+<ul id="lista-carrito"></ul>
+
+<p>
+Cantidad:
+<span id="cantidad">0</span>
+</p>
+
+<p>
+Total:
+$<span id="total">0</span>
+</p>
+
+<h3>DATOS DE COMPRA</h3>
+
+<input type="text" placeholder="Nombre completo">
+<br><br>
+
+<input type="text" placeholder="Número de tarjeta">
+<br><br>
+
+<input type="text" placeholder="Dirección">
+<br><br>
+
+<button type="button" onclick="finalizarCompra()">
+
+FINALIZAR COMPRA
+
+</button>
+
+</div>
+
+
+
+
+<!-- PRODUCTOS -->
+
+<div class="contenedor">
+
+
+
+<!-- PRODUCTO 1 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 1">
+
+<tr>
+<td>
+
+<img src="caballo 1.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 1</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 2 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 2">
+
+<tr>
+<td>
+
+<img src="caballo 2.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 2</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 2'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 3 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 3">
+
+<tr>
+<td>
+
+<img src="caballo 3.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 3</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 3'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- PRODUCTO 4 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 4">
+
+<tr>
+<td>
+
+<img src="caballo 4.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 4</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 4'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 5 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 5">
+
+<tr>
+<td>
+
+<img src="caballo 5.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 5</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 5'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 6 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 6">
+
+<tr>
+<td>
+
+<img src="caballo 6.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 6</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 6'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 1 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 7">
+
+<tr>
+<td>
+
+<img src="caballo 7.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 7</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 7'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 8 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 1">
+
+<tr>
+<td>
+
+<img src="caballo 8.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 8</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 8'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 9 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Cuarta milla 9">
+
+<tr>
+<td>
+
+<img src="caballo 9.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3>Cuarta milla 9</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Cuarta milla 9'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 10 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 10">
+
+<tr>
+<td>
+
+<img src="caballo 10.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Azteca 10</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Azteca 10'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 11 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 11">
+
+<tr>
+<td>
+
+<img src="caballo 11.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Azteca 11</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Azteca 11'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 12 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 12">
+
+<tr>
+<td>
+
+<img src="caballo 12.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Azteca 12</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Azteca 12'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 13 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 13">
+
+<tr>
+<td>
+
+<img src="caballo 13.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Azteca 13</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Azteca 13'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- PRODUCTO 14 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 14">
+
+<tr>
+<td>
+
+<img src="caballo 14.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Criollo 14</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Criollo 14'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 15 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 15">
+
+<tr>
+<td>
+
+<img src="caballo 15.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Criollo 15</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Criollo 15'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 16 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 16">
+
+<tr>
+<td>
+
+<img src="caballo 16.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Criollo 16</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Criollo 16'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 17 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Azteca 17">
+
+<tr>
+<td>
+
+<img src="caballo 17.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Criollo 17</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Criollo 17'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+<!-- PRODUCTO 18 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 18">
+
+<tr>
+<td>
+
+<img src="caballo 18.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 18</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 18'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 18 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 18">
+
+<tr>
+<td>
+
+<img src="caballo 18.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 18</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 18'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+<tr>
+<td>
+
+
+<!-- PRODUCTO 19 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 19">
+
+<tr>
+<td>
+
+<img src="caballo 19.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 19</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 19'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 20 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 20">
+
+<tr>
+<td>
+
+<img src="caballo 20.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 20</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 20'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 21 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 21">
+
+<tr>
+<td>
+
+<img src="caballo 21.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 21</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 21'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- PRODUCTO 22 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 22">
+
+<tr>
+<td>
+
+<img src="caballo 22.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 22</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 22'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 23 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Appaloosa 23">
+
+<tr>
+<td>
+
+<img src="caballo 23.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Appaloosa 23</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Appaloosa 23'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+
+<!-- PRODUCTO 24 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Raza Española 24">
+
+<tr>
+<td>
+
+<img src="caballo 24.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Raza Española 24</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Raza Española 24'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 24 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Raza Española 24">
+
+<tr>
+<td>
+
+<img src="caballo 24.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Raza Española 25</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Raza Española 25'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 26 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Raza Española 26">
+
+<tr>
+<td>
+
+<img src="caballo 26.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Raza Española 26</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Raza Española 26'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 27 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Raza Española 27">
+
+<tr>
+<td>
+
+<img src="caballo 27.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Raza Española 27</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Raza Española 27'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 28 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Raza Española 28">
+
+<tr>
+<td>
+
+<img src="caballo 28.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Raza Española 28</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Raza Española 28'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 29 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Raza Española 29">
+
+<tr>
+<td>
+
+<img src="caballo 29.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Raza Española 29</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Raza Española 29'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+
+<!-- PRODUCTO 30 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Arabe 30">
+
+<tr>
+<td>
+
+<img src="caballo 30.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Arabe 30</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Arabe 30'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- PRODUCTO 31 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Arabe 31">
+
+<tr>
+<td>
+
+<img src="caballo 31.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Arabe 31</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Arabe 31'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+<!-- PRODUCTO 32 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Arabe 32">
+
+<tr>
+<td>
+
+<img src="caballo 32.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Arabe 32</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Arabe 32'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+<!-- PRODUCTO 33 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Arabe 33">
+
+<tr>
+<td>
+
+<img src="caballo 33.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Arabe 33</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Arabe 33'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+<!-- PRODUCTO 34 -->
+
+<table class="producto item"
+border="1"
+data-nombre="Arabe 34">
+
+<tr>
+<td>
+
+<img src="caballo 34.jpg"
+width="200"
+height="300">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h3> Arabe 34</h3>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<h2>$10,000</h2>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+ <a href="https://wa.me/7712971268?text=Hola,%20quiero%20comprar%20el%20un%20par%20de%20tenis%20nike%20de%20$10,000" 
+   target="_blank" 
+   class="boton-whatsapp">
+   Comprar por WhatsApp
+</a>
+
+<style>
+.boton-whatsapp {
+    background-color: #25D366;
+    color: Red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.boton-whatsapp:hover {
+    background-color: #1DA851;
+}
+</style>
+        </td>
+    </tr>
+
+<tr>
+<td>
+
+<button onclick="agregarCarrito('Arabe 34'$1,000,000.199)">
+
+AÑADIR AL CARRITO
+
+</button>
+
+</td>
+</tr>
+
+</table>
+
+<script>
+
+let cantidad = 0;
+let total = 0;
+
+
+
+function mostrarCarrito(){
+
+    let carrito = document.getElementById("carrito");
+
+    if(carrito.style.display === "none" || carrito.style.display === ""){
+
+        carrito.style.display = "block";
+
+    }else{
+
+        carrito.style.display = "none";
+
+    }
+}
+
+
+
+function agregarCarrito(nombre, precio){
+
+    let lista = document.getElementById("lista-carrito");
+
+    let item = document.createElement("li");
+
+    item.innerHTML = nombre + " - $" + precio;
+
+    lista.appendChild(item);
+
+
+
+    cantidad++;
+
+    total += precio;
+
+
+
+    document.getElementById("cantidad").innerHTML = cantidad;
+
+    document.getElementById("total").innerHTML = total;
+
+}
+
+
+
+function filtrar(){
+
+    let input = document.getElementById("buscador").value.toLowerCase();
+
+    let productos = document.querySelectorAll(".item");
+
+
+
+    productos.forEach(producto => {
+
+        let nombre = producto.dataset.nombre.toLowerCase();
+
+
+
+        if(nombre.includes(input)){
+
+            producto.style.display = "table";
+
+        }else{
+
+            producto.style.display = "none";
+
+        }
+
+    });
+
+}
+
+/* FINALIZAR COMPRA */
+
+function finalizarCompra(){
+
+    if(cantidad == 0){
+
+        alert("Tu carrito está vacío 🥲");
+
+    }else{
+
+        alert("✨ Compra realizada con éxito ✨");
+
+        document.getElementById("lista-carrito")
+        .innerHTML = "";
+
+        total = 0;
+        cantidad = 0;
+
+        document.getElementById("total")
+        .textContent = total;
+
+        document.getElementById("cantidad")
+        .textContent = cantidad;
+    }
+}
+
+</script>
+
+</body>
+
+</html>
